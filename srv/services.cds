@@ -10,4 +10,5 @@ service MainService {
         action Rollback();
     };
     entity Statuses as projection on schema.EmployeeStatus;
+    entity Positions as projection on schema.EmployeePosition;
 }

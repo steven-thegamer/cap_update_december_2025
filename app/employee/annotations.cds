@@ -7,11 +7,6 @@ annotate service.Employees with @(
             Label : 'Name',
         },
         {
-            $Type : 'UI.DataField',
-            Value : status_code,
-            Label : 'Status',
-        },
-        {
             $Type : 'UI.DataFieldForAction',
             Action : 'MainService.OnLeave',
             Label : '{i18n>OnLeave}',
@@ -30,6 +25,16 @@ annotate service.Employees with @(
             $Type : 'UI.DataFieldForAction',
             Action : 'MainService.Rollback',
             Label : '{i18n>Rollback}',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : position_ID,
+            Label : '{i18n>Position}',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : status_code,
+            Label : '{i18n>Status}',
         },
     ],
     UI.Facets : [
@@ -59,7 +64,7 @@ annotate service.Employees with @(
 
 annotate service.Employees with {
     status @(
-        Common.Text : status.desc,
+        Common.Text : status.name,
         Common.Text.@UI.TextArrangement : #TextOnly,
     )
 };

@@ -8,7 +8,8 @@
     "@sap/cds-dk": "^9.5.0"
   },
   "sapux": [
-    "app/employee"
+    "app/employee",
+    "app/position"
   ],
   "cds": {
     "requires": {
@@ -20,5 +21,8 @@
         }
       }
     }
+  },
+  "dependencies": {
+    "@sap/cds-compiler": "^6.6.0"
   }
 }

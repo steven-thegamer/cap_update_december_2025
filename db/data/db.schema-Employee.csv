@@ -1,6 +1,6 @@
-ID,name,status_code
-e7b8a9c2-1f2a-4e6a-9b1a-1c2d3e4f5a6b,John Doe,W
-f3c2b1a4-5d6e-7f8a-9b0c-1d2e3f4a5b6c,Jane Smith,W
-0a1b2c3d-4e5f-6789-abcd-ef0123456789,Michael Brown,L
-123e4567-e89b-12d3-a456-426614174000,Lisa White,L
-abcdefab-cdef-1234-5678-abcdefabcdef,Chris Green,S
+ID,name,status_code,position_ID
+e7b8a9c2-1f2a-4e6a-9b1a-1c2d3e4f5a6b,John Doe,W,e7b8a9e2-1c2a-4c8d-8f3b-1a2b3c4d5e6f
+f3c2b1a4-5d6e-7f8a-9b0c-1d2e3f4a5b6c,Jane Smith,W,f2c3b4a5-2d3e-4f5a-9b6c-2b3c4d5e6f7a
+0a1b2c3d-4e5f-6789-abcd-ef0123456789,Michael Brown,L,f6a7b8c9-6b7c-8d9e-3f0a-6f7a8b9c0d1e
+123e4567-e89b-12d3-a456-426614174000,Lisa White,L,fae1f2a3-0f1a-2b3c-7d4e-0d1e2f3a4b5c
+abcdefab-cdef-1234-5678-abcdefabcdef,Chris Green,S,f9d0e1f2-9e0f-1a2b-6c3d-9c0d1e2f3a4b

@@ -72,9 +72,9 @@ annotate service.Employees with {
     end);
 };
 
-// annotate service.Employees with @flow.status: status actions {
-//     OnLeave @from: #Working @to: #OnPaidLeave;
-//     BackToWork @from: [ #OnPaidLeave, #Sick ] @to: #Working;
-//     OnSick @from: #Working @to : #Sick; 
-//     Rollback @from: [ #OnPaidLeave, #Sick, #Working ] @to: $flow.previous;
-// };
+annotate service.Employees with @flow.status: status actions {
+    OnLeave @from: #Working @to: #OnPaidLeave;
+    BackToWork @from: [ #OnPaidLeave, #Sick ] @to: #Working;
+    OnSick @from: #Working @to : #Sick; 
+    Rollback @from: [ #OnPaidLeave, #Sick, #Working ] @to: $flow.previous;
+};

@@ -4,12 +4,12 @@ annotate service.Employees with @(
         {
             $Type : 'UI.DataField',
             Value : name,
-            Label : '{i18n>Name}',
+            Label : 'Name',
         },
         {
             $Type : 'UI.DataField',
             Value : status_code,
-            Label : '{i18n>Status}',
+            Label : 'Status',
         },
         {
             $Type : 'UI.DataFieldForAction',
@@ -66,9 +66,9 @@ annotate service.Employees with {
 
 annotate service.Employees with {
     name @assert: (case
-        when name is null then '{i18n>NameIsNull}'
-        when trim(name) = '' then '{i18n>NameIsEmpty}'
-        when length(name) < 3 then '{i18n>NameIsShort}'
+        when name is null then 'Name must be specified!'
+        when trim(name) = '' then 'Name must not be empty!'
+        when length(name) < 3 then 'Name is too short!'
     end);
 };
 

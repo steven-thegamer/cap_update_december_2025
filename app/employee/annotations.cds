@@ -4,32 +4,32 @@ annotate service.Employees with @(
         {
             $Type : 'UI.DataField',
             Value : name,
-            Label : 'Name',
+            Label : '{i18n>Name}',
         },
         {
             $Type : 'UI.DataField',
             Value : status_code,
-            Label : 'Status',
+            Label : '{i18n>Status}',
         },
         {
             $Type : 'UI.DataFieldForAction',
             Action : 'MainService.OnLeave',
-            Label : 'On Leave',
+            Label : '{i18n>OnLeave}',
         },
         {
             $Type : 'UI.DataFieldForAction',
             Action : 'MainService.BackToWork',
-            Label : 'Back To Work',
+            Label : '{i18n>BackToWork}',
         },
         {
             $Type : 'UI.DataFieldForAction',
             Action : 'MainService.OnSick',
-            Label : 'On Sick',
+            Label : '{i18n>OnSick}',
         },
         {
             $Type : 'UI.DataFieldForAction',
             Action : 'MainService.Rollback',
-            Label : 'Rollback',
+            Label : '{i18n>Rollback}',
         },
     ],
     UI.Facets : [
@@ -46,12 +46,12 @@ annotate service.Employees with @(
             {
                 $Type : 'UI.DataField',
                 Value : name,
-                Label : 'Name',
+                Label : '{i18n>Name}',
             },
             {
                 $Type : 'UI.DataField',
                 Value : status_code,
-                Label : 'status_code',
+                Label : '{i18n>Status}',
             },
         ],
     },
@@ -64,3 +64,17 @@ annotate service.Employees with {
     )
 };
 
+annotate service.Employees with {
+    name @assert: (case
+        when name is null then '{i18n>NameIsNull}'
+        when trim(name) = '' then '{i18n>NameIsEmpty}'
+        when length(name) < 3 then '{i18n>NameIsShort}'
+    end);
+};
+
+// annotate service.Employees with @flow.status: status actions {
+//     OnLeave @from: #Working @to: #OnPaidLeave;
+//     BackToWork @from: [ #OnPaidLeave, #Sick ] @to: #Working;
+//     OnSick @from: #Working @to : #Sick; 
+//     Rollback @from: [ #OnPaidLeave, #Sick, #Working ] @to: $flow.previous;
+// };

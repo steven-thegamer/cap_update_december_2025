@@ -66,7 +66,13 @@ annotate service.Employees with {
     status @(
         Common.Text : status.name,
         Common.Text.@UI.TextArrangement : #TextOnly,
+    );
+
+    position @(
+        Common.Text : position.position,
+        Common.Text.@UI.TextArrangement : #TextOnly,
     )
+
 };
 
 annotate service.Employees with {

@@ -13,6 +13,12 @@ Status-transition flows ensure transitions are explicitly modeled, validated, an
 #### Declarative Constraints
 Declarative constraints allow you to express conditions using CDS Expression Language (CXL) that are validated automatically whenever data is written. This greatly reduces the need for extensive custom code for input validation.
 
+#### Hierarchy Table
+Annotations for hierarchical tree views have been greatly streamlined. Simply annotate a respective entity with the new @hierarchy annotation like this:
+```cds
+annotate AdminService.Genres with @hierarchy;
+```
+Which replaces all of these elaborate OData annotations you had to add previously
 
 > **Note:** Don't confuse declarative constraints as discussed in here with database constraints. Declarative constraints are meant for domain-specific input validation with error messages meant to be shown to end users, while database constraints are meant to prevent data corruption due to programming error, with error messages not intended for end users.
 

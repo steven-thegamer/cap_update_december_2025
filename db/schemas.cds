@@ -15,6 +15,7 @@ entity EmployeeStatus : CodeList {
 entity EmployeePosition : cuid {
     position : String;
     parent : Association to one EmployeePosition;
+    employees : Association to many Employee on employees.position = $self;
 }
 
 type EmployeeStatusCode : String(1) enum {

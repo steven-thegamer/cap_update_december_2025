@@ -100,6 +100,11 @@
           "pattern": ":?query:",
           "name": "PositionsList",
           "target": "PositionsList"
+        },
+        {
+          "name": "PositionsObjectPage",
+          "pattern": "Positions({PositionsKey}):?query:",
+          "target": "PositionsObjectPage"
         }
       ],
       "targets": {
@@ -111,7 +116,13 @@
             "settings": {
               "contextPath": "/Positions",
               "variantManagement": "Page",
-              "navigation": {},
+              "navigation": {
+                "Positions": {
+                  "detail": {
+                    "route": "PositionsObjectPage"
+                  }
+                }
+              },
               "controlConfiguration": {
                 "@com.sap.vocabularies.UI.v1.LineItem": {
                   "tableSettings": {
@@ -121,6 +132,17 @@
                 }
               },
               "initialLoad": "Enabled"
+            }
+          }
+        },
+        "PositionsObjectPage": {
+          "type": "Component",
+          "id": "PositionsObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "navigation": {},
+              "contextPath": "/Positions"
             }
           }
         }

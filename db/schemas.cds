@@ -6,10 +6,16 @@ entity Employee : cuid {
     name : String;
     position : Association to one EmployeePosition;
     @readonly status : Association to one EmployeeStatus default 'W';
+    project : Association to one Project;
 }
 
 entity EmployeeStatus : CodeList {
     key code : EmployeeStatusCode;
+}
+
+entity Project : cuid {
+    name : String;
+    involvedEmployees : Association to many Employee on involvedEmployees.project = $self;
 }
 
 entity EmployeePosition : cuid {

@@ -8,7 +8,9 @@ service MainService {
         action BackToWork();
         action OnSick();
         action Rollback();
+        action assignProject(project : Projects:ID);
     };
     entity Statuses as projection on schema.EmployeeStatus;
     entity Positions as projection on schema.EmployeePosition;
+    entity Projects as projection on schema.Project;
 }
